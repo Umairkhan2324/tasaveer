@@ -24,16 +24,19 @@ export default async function GalleryPage({
 
   return (
     <section>
-      <div className="flex flex-col gap-8">
-        <div className="flex justify-between">
-          <h1 className="text-4xl font-bold">Gallery</h1>
+    <div className="flex flex-col gap-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+        <h1 className="text-4xl font-bold">Gallery</h1>
+        <div className="mt-4 sm:mt-0">
           <UploadButton />
         </div>
-
-        <SearchForm initialSearch={search} />
-
-        <GalleryGrid images={results.resources} />
       </div>
-    </section>
+  
+      <SearchForm initialSearch={search} />
+  
+      <GalleryGrid images={results.resources} />
+    </div>
+  </section>
+  
   );
 }

@@ -15,7 +15,7 @@ export default function Home() {
   const [imageId, setImageId] = useState("");
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-6 md:p-12 lg:p-24">
       <CldUploadButton
         onUpload={(result: UploadResult) => {
           setImageId(result.info.public_id);

@@ -67,3 +67,15 @@
       @apply bg-background text-foreground;
     }
   }
+
+@layer base {
+  html.dark {
+    background-color: #1a202c;
+    color: #f7fafc;
+  }
+
+  html.light {
+    background-color: #f7fafc;
+    color: #1a202c;
+  }
+}
