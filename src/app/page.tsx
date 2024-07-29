@@ -1,7 +1,7 @@
 "use client";
 
-import { CldImage } from "next-cloudinary";
-import { CldUploadButton } from "next-cloudinary";
+import { CldImage, CldUploadButton, CldUploadWidget } from "next-cloudinary";
+import { CloudinaryUploadWidgetResults } from "next-cloudinary";
 import { useState } from "react";
 
 export type UploadResult = {
@@ -17,8 +17,11 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-6 md:p-12 lg:p-24">
       <CldUploadButton
-        onSuccess={(result: UploadResult) => {
-          setImageId(result?.info?.public_id! || "");
+      
+        onSuccess={(result: CloudinaryUploadWidgetResults) => {
+          typeof result?.info === "object"
+          ?setImageId(result.info.public_id!)
+          : " ";
         }}
         uploadPreset="giomsr4s"
       />
